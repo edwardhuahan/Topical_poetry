@@ -136,8 +136,8 @@ bool is_good_word_phrase(string s){
 }
 
 void read_vectors(FILE* f){
-  	fscanf(f, "%lld", &num_words);
-  	fscanf(f, "%lld", &num_hidden);
+  	fscanf(f, "%lld", (long long int*)&num_words);
+  	fscanf(f, "%lld", (long long int*)&num_hidden);
 
   	//cout<<num_words<<" "<<num_hidden<<endl;
   	//num_words=100;
