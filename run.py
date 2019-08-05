@@ -1,7 +1,7 @@
 import os
 import struct
 
-topic = 'cat'
+topic = sys.argv[1]
 data = ''
 path = os.path.join(os.getcwd(), '../example/4line/')
 
