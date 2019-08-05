@@ -1,6 +1,8 @@
 import os
 import struct
 import sys
+sys.path.insert(1, os.getcwd()+'/../py/')
+import run_standalone
 
 topic = sys.argv[1]
 data = ''
@@ -38,3 +40,5 @@ poem_cmd += '50 1 '
 poem_cmd += random_dir
 
 os.system(poem_cmd)
+
+print(run_standalone.process_results(random_dir+'/output.txt'))
