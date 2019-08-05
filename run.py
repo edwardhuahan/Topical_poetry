@@ -1,6 +1,7 @@
 import os
 import struct
 import sys
+import shutil
 sys.path.insert(1, os.getcwd()+'/../py/')
 import run_standalone
 
@@ -42,3 +43,6 @@ poem_cmd += random_dir
 os.system(poem_cmd)
 
 print(run_standalone.process_results(random_dir+'/output.txt'))
+# Deletes folder
+shutil.rmtree(random_dir)
+
