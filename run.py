@@ -14,7 +14,7 @@ os.mkdir(os.path.join(path,data))
 
 random_dir = os.path.join('../',path, data)
 current_dir = os.getcwd()
-rhyme_cmd = 'sudo sh '+rhyme_dir+'/run-different-line-numbers.sh '
+rhyme_cmd = 'sudo sh '+current_dir+'/run-different-line-numbers.sh '
 rhyme_cmd += topic + ' '
 rhyme_cmd += random_dir+'/poem.fsa '
 rhyme_cmd += random_dir+'/source.txt '
