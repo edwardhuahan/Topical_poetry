@@ -1,5 +1,6 @@
 import os
 import struct
+import sys
 
 topic = sys.argv[1]
 data = ''
@@ -23,16 +24,17 @@ rhyme_cmd += random_dir+'/encourage.txt '
 rhyme_cmd += '4'
 
 os.system(rhyme_cmd)
+open(random_dir+'/output.txt', 'a').close()
 
-root_dir = os.path.join(current_dir, '../')
+root_dir = os.getcwd() + '/..'
 poem_cmd = 'python '
-poem_cmd += os.path.join(root_dir, '/py/run_standalone.py ')
-poem_cmd += os.path.join(root_dir, '/models/lyrics.tl.nn ')
-poem_cmd += os.path.join(random_dir, '/source.txt ')
-poem_cmd += os.path.join(random_dir, '/poem.fsa ')
-poem_cmd += os.path.join(random_dir, '/encourage.txt ')
-poem_cmd += os.path.join(random_dir, '/output.txt ')
+poem_cmd += root_dir+'/py/run_standalone.py '
+poem_cmd += root_dir+'/models/lyrics.tl.nn '
+poem_cmd += random_dir+'/source.txt '
+poem_cmd += random_dir+'/poem.fsa '
+poem_cmd += random_dir+'/encourage.txt '
+poem_cmd += random_dir+'/output.txt '
 poem_cmd += '50 1 '
 poem_cmd += random_dir
 
-print(poem_cmd)
+os.system(poem_cmd)
