@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>PoetNet</title>
+    <meta charset="utf-8">
+    <meta name="description" content="WebRTC code samples">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta name="mobile-web-app-capable" content="yes">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/ml5@0.3.1/dist/ml5.min.js"></script>
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Montserrat', 'Helvetica Neue', Helvetica, sans-serif
+        }
+
+        .fullscreen-bg {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+        }
+
+        .fullscreen-bg__video {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        #button {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            margin-left: -25px;
+            top: 80%;
+            left: 50%;
+            border-radius: 100%;
+            border-style: solid;
+            border-width: 5px;
+        }
+
+        #display {
+            position: fixed;
+            top: 0%;
+            opacity: 0;
+            transition: 0.7s opacity;
+        }
+
+        #display.fade {
+            opacity: 1;
+            transition: 0.7s opacity;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="fullscreen-bg">
+        <video playsinline autoplay class="fullscreen-bg__video"></video>
+        <canvas id="canvas" style="display: none;"></canvas>
+    </div>
+    <button id="button" onclick="sendForm()"></button>
+    <img id="image" src="">
+    <p id="display"style="white-space:pre-wrap; color: white;">
+        Poem
+        Poem Poem
+        Poem Poem Poem
+        Poem Poem Poem
+        Poem Poem Poem Poem
+        Poem Poem
+    </p>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'script.js') }}"></script>
+</body>
+
+
+</html>
